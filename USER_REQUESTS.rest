@@ -1,0 +1,46 @@
+//@host = http://localhost:3000
+@host = https://crm-restaurantapi-z9vj.onrender.com
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTR9.O_I9pZmtxJxSGuXXIAMqsbBQDwmUcZNWSuK1sded9Lw
+
+### Client endpoints
+
+### Get user profile
+GET {{host}}/api/user
+Authorization: {{token}}
+
+### Register user
+POST {{host}}/api/user
+Content-Type: application/json
+
+{
+    "name": "carlos86",
+    "surname": "Lopez",
+    "phone": "637398857",
+    "password": "123456789",
+    "email": "carlos86@gmail.com"
+}
+
+### Login user
+POST {{host}}/api/user/login
+Content-Type: application/json
+
+{
+    "email": "carlos86@gmail.com",
+    "password": "123456789"
+}
+
+### Update a user
+PUT {{host}}/api/user
+Content-Type: application/json
+Authorization: {{token}}
+
+{
+   "name": "charly86",
+    "surname": "Lopez",
+    "phone": "637398857",
+    "password": "12345678",
+    "email": "charly86@gmail.com"
+}
+### Delete a user
+DELETE {{host}}/api/user/26
+Authorization: {{token}}

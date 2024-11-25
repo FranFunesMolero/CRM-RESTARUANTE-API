@@ -1,0 +1,6 @@
+@host = http://localhost:3000
+@tokenAdmin = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MjF9.RfopwvQBbCp4QP3VGyYMR6CcjBKBlbhf2aIFIZFCLmU
+
+### Get all dishes
+GET {{host}}/api/admin/dish
+Authorization: {{tokenAdmin}}

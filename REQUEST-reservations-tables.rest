@@ -1,0 +1,60 @@
+@host = http://localhost:3000
+# @host = https://crm-restaurant.onrender.com
+### Get all
+GET {{host}}/api/reservations
+
+### Get all with optional params
+GET {{host}}/api/reservations?date=2029-01-02
+
+### Get all customers reservations with optional params
+GET {{host}}/api/reservations/customer?date=2029-01-02
+
+### Get by id
+GET {{host}}/api/reservations/1
+
+### POST a reservation (with tables)
+POST {{host}}/api/reservations
+Content-Type: application/json
+
+{
+    "date": "2029-01-02",
+    "time": "breakfast",
+    "guests": 1,
+    "status": "pending",
+    "user_id": 1,
+    "location": "inside"
+}
+
+### Delete by id
+DELETE {{host}}/api/reservations/SSAD
+
+### Update status by id 
+PUT {{host}}/api/reservations/1/status/confirmed
+Content-Type: application/json
+
+#################### TABLES ####################
+
+### Get all
+GET {{host}}/api/tables
+
+### Get available tables
+GET {{host}}/api/tables/available/2024-04-01
+
+### Delete by id
+DELETE {{host}}/api/tables/1
+
+### Update capacity by id
+PUT {{host}}/api/tables/3/capacity/30
+
+### Create table 
+POST {{host}}/api/tables
+Content-Type: application/json
+
+{
+    "number": 24,
+    "location": "inside",
+    "capacity": 1
+}
+
+### Get furue tables
+GET {{host}}/api/tables/future/2023-12-31

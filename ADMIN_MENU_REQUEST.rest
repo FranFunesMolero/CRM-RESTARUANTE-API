@@ -1,0 +1,43 @@
+#@host = http://localhost:3000
+@host = https://crm-restaurantapi-z9vj.onrender.com
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MjF9.RfopwvQBbCp4QP3VGyYMR6CcjBKBlbhf2aIFIZFCLmU
+
+### // Get a menu with ID
+GET {{host}}/api/admin/menu/11
+Authorization: {{token}}
+
+### // Get all menus
+GET {{host}}/api/admin/menu?order=desc&page=1&limit=10
+Authorization: {{token}}
+
+###  // Create menu
+POST {{host}}/api/admin/menu
+Content-Type: application/json
+Authorization: {{token}}
+
+{
+    "dishes":[
+        1, 5, 15
+    ], 
+    "date": "2024-11-21",
+    "name": "menu viernes 5",
+    "price": 100
+}
+
+###  // Delete a menu with his ID
+DELETE {{host}}/api/admin/menu/2
+Authorization: {{token}}
+
+###  // Update a menu with its ID
+PUT {{host}}/api/admin/menu/11
+Authorization: {{token}}
+Content-Type: application/json
+
+{
+    "dishes":[
+        36, 35, 34, 33, 32
+    ], 
+    "date": "2024-11-21",
+    "name": "Menu Alexis actualizado",
+    "price": 200
+}
